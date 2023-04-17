@@ -1,0 +1,136 @@
+#geral1 {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+}
+    
+  
+
+#geral1 div {
+    flex: 1; 
+    text-align: center; 
+  }
+
+#id, #Country, #Confirmed, #Deaths, #Recovered, #Active, #Date{
+    width: 5px;
+    height: 20px;
+    border:  solid 1px rgb(103, 118, 18);
+    margin-right: 10px;
+    background-color: yellow;
+
+  }
+
+
+
+
+#geral2 {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+}
+    
+  
+
+#geral2 div {
+    flex: 1; 
+    text-align: center; 
+  }
+
+#imagemcorona{
+    height: 300px;
+    width: 100%
+}
+
+h1{
+    text-align: center;
+}
+
+
+#btn{
+    margin-left: 46%;
+    margin-top: 8%;
+    background-color: #4CAF50; 
+    border: none; 
+    color: white; 
+    padding: 15px 32px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; 
+    cursor: pointer; 
+    border-radius: 8px; 
+  }
+
+
+  @media screen and (max-width: 720px) {
+    #imagemcorona {
+      width: 100%; /* Reduz a largura da imagem para metade do contêiner pai */
+    }
+
+    h1{
+      margin:0 ;
+  }
+
+  
+
+  #geral1{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 20px; 
+  }
+
+  #id, #Country, #Confirmed, #Deaths, #Recovered, #Active, #Date{
+    width: 250px;
+    height: 20px;
+    border:  solid 1px rgb(103, 118, 18);
+    margin-right: 10px;
+    background-color: yellow;
+    margin-top: 25px;
+
+  }
+
+
+  #geral2{
+    display: inline-block;
+    margin-top: 20px;
+  
+  }
+
+
+  #idAPI, #CountryAPI, #ConfirmedAPI, #DeathsAPI, #RecoveredAPI, #ActiveAPI, #DateAPI{
+    margin-top: 30px;
+
+  }
+
+
+  #btn{
+   margin: auto;
+    width: 100%;
+
+  }
+
+  
+  }
+
+  
+
+
+ 
+  
+  
+  
+  
+  
+  
+
+
+
+
+ 
+
+
+    
+
+
+
+

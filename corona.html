@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="corona.css">
+    <title>CoronaVirus</title>
+</head>
+<body>
+     
+    <h1> CORONAVIRUS</h1>
+   
+
+    <img id="imagemcorona" src="correta.png" alt="imagem corona">
+
+    <div id="geral1">
+       <div id="id"><span>ID</span></div>
+       <div id="Country"><span>Country</span></div>
+       <div id="Confirmed"><span>Confirmed</span></div>
+       <div id="Deaths"><span>Deaths</span></div>
+       <div id="Recovered"><span>Recovered</span></div>
+       <div id="Active"><span>Active</span></div>
+       <div id="Date"><span>Date</span></div>
+    </div>
+
+    <div id="geral2">
+        <div id="idAPI"><h6 id="ID-name"></h4></div>
+        <div id="CountryAPI"><h4 id="Country-name"></h4></div>
+        <div id="ConfirmedAPI"><h4 id="Confirmed-name"></h4></div>
+        <div id="DeathsAPI"><h4 id="Deaths-name"></h4></div>
+        <div id="RecoveredAPI"><h4 id="Recovered-name"></h4></div>
+        <div id="ActiveAPI"><h4 id="Active-name"></h4></div>
+        <div id="DateAPI"><h4 id="Date-name"></h4></div>   
+    </div>
+
+    
+
+     <button id="btn">Proximo</button>
+
+    <script>
+        function loadCoronaData(){
+        const BASE_URL = `https://api.covid19api.com/dayone/country/brazil`;
+        fetch(BASE_URL)
+                .then(function(resData){
+                    return resData.json();
+                })
+                .then(function(jsonData){
+                    console.log(jsonData)
+
+                    const randomIndex = Math.floor(Math.random() * jsonData.length); 
+                    const randomID = jsonData[randomIndex].ID; 
+                    const dateElement = document.getElementById('ID-name');
+                    dateElement.textContent = randomID;
+
+                    const countryName = document.getElementById('Country-name');
+                    countryName.textContent = jsonData[randomIndex].Country;
+
+                    const ConfirmedName = document.getElementById('Confirmed-name');
+                    ConfirmedName.textContent = jsonData[randomIndex].Confirmed;
+
+                    const DeathsName = document.getElementById('Deaths-name');
+                    DeathsName.textContent = jsonData[randomIndex].Deaths;
+
+                    const RecoveredName = document.getElementById('Recovered-name');
+                    RecoveredName.textContent = jsonData[randomIndex].Recovered;
+
+                    const ActiveName = document.getElementById('Active-name');
+                    ActiveName.textContent = jsonData[randomIndex].Active;
+
+                    const DateName = document.getElementById('Date-name');
+                    DateName.textContent = jsonData[randomIndex].Date;
+
+                   
+                })
+            }
+            loadCoronaData();
+
+
+        const Btn = document.getElementById('btn');
+        Btn.addEventListener('click', function() {
+            loadCoronaData();
+        });
+
+                
+    </script>
+    
+</body>
+</html>
